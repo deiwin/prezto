@@ -11,5 +11,8 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+
+alias shutdown="$HOME/bin/graceful_shutdown.sh"
+
 eval $(dircolors ~/.dircolors)
 . /etc/profile.d/vte.sh
