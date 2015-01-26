@@ -12,6 +12,19 @@ fi
 
 # Customize to your needs...
 
+alias vi='vim'
+export EDITOR='vim'
+export VISUAL='vim'
+
+GOPATH="$HOME/workspace/go"
+GOROOT=/usr/lib/go
+
+path=(
+  $path
+  "$HOME/.gem/ruby/2.1.0/bin"
+  $GOPATH/bin
+)
+
 alias shutdown="$HOME/bin/graceful_shutdown.sh"
 
 eval $(dircolors ~/.dircolors)
