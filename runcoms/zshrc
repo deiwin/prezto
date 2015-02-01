@@ -16,16 +16,16 @@ alias vi='vim'
 export EDITOR='vim'
 export VISUAL='vim'
 
-GOPATH="$HOME/workspace/go"
-GOROOT=/usr/lib/go
+export GOPATH="$HOME/workspace/go"
+export GOROOT=/usr/lib/go
 
 path=(
+  "$HOME/bin"
   $path
   "$HOME/.gem/ruby/2.1.0/bin"
   $GOPATH/bin
 )
 
-alias shutdown="$HOME/bin/graceful_shutdown.sh"
-
 eval $(dircolors ~/.dircolors)
 . /etc/profile.d/vte.sh
+
