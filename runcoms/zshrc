@@ -15,6 +15,7 @@ fi
 alias vi='vim'
 export EDITOR='vim'
 export VISUAL='vim'
+export BROWSER='qutebrowser'
 
 export GOPATH="$HOME/workspace/go"
 export GOROOT=/usr/lib/go
