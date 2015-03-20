@@ -24,6 +24,7 @@ path=(
   "$HOME/bin"
   $path
   "$HOME/.gem/ruby/2.1.0/bin"
+  "$HOME/.gem/ruby/2.2.0/bin"
   $GOPATH/bin
 )
 
