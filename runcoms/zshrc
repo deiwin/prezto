@@ -15,7 +15,7 @@ fi
 alias vi='vim'
 export EDITOR='vim'
 export VISUAL='vim'
-export BROWSER='qutebrowser'
+export BROWSER='chromium'
 
 export GOPATH="$HOME/workspace/go"
 export GOROOT=/usr/lib/go
@@ -27,7 +27,4 @@ path=(
   "$HOME/.gem/ruby/2.2.0/bin"
   $GOPATH/bin
 )
-
-eval $(dircolors ~/.dircolors)
-. /etc/profile.d/vte.sh
 
