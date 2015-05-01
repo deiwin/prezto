@@ -31,3 +31,4 @@ path=(
 eval $(dircolors ~/.dircolors)
 . /etc/profile.d/vte.sh
 
+export CHROME_BIN=chromium
