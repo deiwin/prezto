@@ -38,6 +38,7 @@ path=(
   $GOPATH/bin
 )
 
+# Fixes colors in termite
 eval $(dircolors ~/.dircolors)
 . /etc/profile.d/vte.sh
 
