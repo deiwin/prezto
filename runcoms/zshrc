@@ -10,6 +10,16 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+# Source the .zshrc.d directory
+ZSHRC_DIR="${ZDOTDIR:-$HOME}/.config/zshrc.d"
+if [[ -d $ZSHRC_DIR ]]
+then
+  for rcfile in $ZSHRC_DIR/*(.)
+  do
+    source $rcfile
+  done
+fi
+
 # Customize to your needs...
 
 alias vi='vim'
