@@ -24,12 +24,17 @@ version is 4.3.11.
      ```
 
   3. Create a new Zsh configuration by copying the Zsh configuration files
-     provided:
+     provided. Before creating the link, the folder structure is also recreated
+     in the home directory:
 
      ```sh
      setopt EXTENDED_GLOB
-     for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-       ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+     RUNCOMS="${ZDOTDIR:-$HOME}"/.zprezto/runcoms
+     for rcdir in $RUNCOMS/**/*(/); do
+       mkdir -p "${ZDOTDIR:-$HOME}/.${rcdir/$RUNCOMS\//}"
+     done
+     for rcfile in $RUNCOMS/**/^README.md(.); do
+       ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile/$RUNCOMS\//}"
      done
      ```
 
