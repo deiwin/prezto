@@ -46,3 +46,7 @@ export CHROME_BIN=chromium
 
 alias codex='mpv --loop inf ~/Videos/codex.mp4'
 alias lolslides='feh -F -Z -S mtime --reverse -D 0.2 --cycle-once ~/.lolcommits/**'
+
+# ALT+. to repeat last parameter of the previous command
+# Works as !$ would
+bindkey '\e.' insert-last-word
