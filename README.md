@@ -11,6 +11,10 @@ Installation
 Prezto will work with any recent release of Zsh, but the minimum required
 version is 4.3.11.
 
+  0. Install dependencies:
+
+        yaourt -S zsh fortune-mod fortune-mod-arresteddevelopment fortune-mod-archlinux fortune-mod-discworld fortune-mod-vimtips fortune-mod-betteroffted
+
   1. Launch Zsh:
 
      ```console

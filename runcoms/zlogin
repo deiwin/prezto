@@ -19,7 +19,12 @@
 
   # Print a random, hopefully interesting, adage.
   if (( $+commands[fortune] )); then
-    fortune -s
+    command fortune -c discworld archlinux arresteddevelopment betteroffted vimtips |
+    fmt -80 -s                                                                      |
+    $(shuf -n 1 -e cowsay cowthink)                                                 \
+    -$(shuf -n 1 -e b d g p s t w y)                                                \
+    -f $(shuf -n 1 -e $(cowsay -l | tail -n +2))                                    \
+    -n
     print
   fi
 
