@@ -22,9 +22,14 @@ fi
 
 # Customize to your needs...
 
-alias vi='vim'
-export EDITOR='vim'
-export VISUAL='vim'
+export NVIM_TUI_ENABLE_TRUE_COLOR=1
+VIM='nvim'
+
+alias gvim='mvim -g'
+alias vi=$VIM
+alias vim=$VIM
+export EDITOR=$VIM
+export VISUAL=$VIM
 export BROWSER='qutebrowser'
 
 export GOPATH="$HOME/workspace/go"
