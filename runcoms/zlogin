@@ -15,17 +15,20 @@
 } &!
 
 # Execute code only if STDERR is bound to a TTY.
-[[ -o INTERACTIVE && -t 2 ]] && {
+# [[ -o INTERACTIVE && -t 2 ]] && {
 
-  # Print a random, hopefully interesting, adage.
-  if (( $+commands[fortune] )); then
-    command fortune -c discworld archlinux arresteddevelopment betteroffted vimtips |
-    fmt -80 -s                                                                      |
-    $(shuf -n 1 -e cowsay cowthink)                                                 \
-    -$(shuf -n 1 -e b d g p s t w y)                                                \
-    -f $(shuf -n 1 -e $(cowsay -l | tail -n +2))                                    \
-    -n
-    print
-  fi
+#   # Print a random, hopefully interesting, adage.
+#   if (( $+commands[fortune] )); then
+#     command fortune -c discworld archlinux arresteddevelopment betteroffted vimtips |
+#     fmt -80 -s                                                                      |
+#     $(shuf -n 1 -e cowsay cowthink)                                                 \
+#     -$(shuf -n 1 -e b d g p s t w y)                                                \
+#     -f $(shuf -n 1 -e $(cowsay -l | tail -n +2))                                    \
+#     -n
+#     print
+#   fi
 
-} >&2
+# } >&2
+
+# Load RVM into a shell session *as a function*
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"

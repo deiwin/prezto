@@ -10,16 +10,6 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# Source the .zshrc.d directory
-ZSHRC_DIR="${ZDOTDIR:-$HOME}/.config/zshrc.d"
-if [[ -d $ZSHRC_DIR ]]
-then
-  for rcfile in $ZSHRC_DIR/*(.)
-  do
-    source $rcfile
-  done
-fi
-
 # Customize to your needs...
 
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
@@ -32,26 +22,63 @@ export EDITOR=$VIM
 export VISUAL=$VIM
 export BROWSER='qutebrowser'
 
-export GOPATH="$HOME/workspace/go"
-export GOROOT=/usr/lib/go
+export GOPATH="$HOME/private-workspace/go:$HOME/workspace/go"
+export GOROOT=/usr/local/opt/go/libexec
+
+export JAVA_HOME=$(/usr/libexec/java_home)
 
 path=(
   "$HOME/bin"
   $path
-  "$HOME/.gem/ruby/2.1.0/bin"
-  "$HOME/.gem/ruby/2.2.0/bin"
-  $GOPATH/bin
+  "$HOME/.rvm/bin"
+  "$HOME/.cabal/bin"
+  "$GOROOT"/bin
+  "$GOPATH"/bin
 )
 
-# Fixes colors in termite
-eval $(dircolors ~/.dircolors)
-. /etc/profile.d/vte.sh
+export CHROME_BIN="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 
-export CHROME_BIN=chromium
-
-alias codex='mpv --loop inf ~/Videos/codex.mp4'
-alias lolslides='feh -F -Z -S mtime --reverse -D 0.2 --cycle-once ~/.lolcommits/**'
+#alias codex='mpv --loop inf ~/Videos/codex.mp4'
+#alias lolslides='feh -F -Z -S mtime --reverse -D 0.2 --cycle-once ~/.lolcommits/**'
 
 # ALT+. to repeat last parameter of the previous command
 # Works as !$ would
 bindkey '\e.' insert-last-word
+
+# Set up NVM
+export NVM_DIR="/Users/deiwin/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+# Load RVM into a shell session *as a function*
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+function killruby(){
+   ps aux | grep ruby | awk '{print $2}' | sudo xargs kill -9;
+}
+function killcoffee(){
+   ps aux | grep coffee | awk '{print $2}' | sudo xargs kill -9;
+}
+
+# Source the .zshrc.d directory
+ZSHRC_DIR="${ZDOTDIR:-$HOME}/.config/zshrc.d"
+if [[ -d $ZSHRC_DIR ]]
+then
+  for rcfile in $ZSHRC_DIR/*(.)
+  do
+    source $rcfile
+  done
+fi
+
+# Works around some issues with the ruby-git gem: https://github.com/schacon/ruby-git/issues/188
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+source /Users/deiwin/.iterm2_shell_integration.zsh
+
+[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND='ag -g ""'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
