@@ -22,6 +22,7 @@ export VISUAL=$VIM
 export BROWSER='qutebrowser'
 
 export GOPATH="$HOME/private-workspace/go:$HOME/workspace/go"
+GOBIN="$HOME/private-workspace/go/bin:$HOME/workspace/go/bin"
 export GOROOT=/usr/local/opt/go/libexec
 
 export JAVA_HOME=$(/usr/libexec/java_home)
@@ -32,7 +33,7 @@ path=(
   "$HOME/.rvm/bin"
   "$HOME/.cabal/bin"
   "$GOROOT"/bin
-  "$GOPATH"/bin
+  "$GOBIN"
 )
 
 export CHROME_BIN="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
