@@ -30,8 +30,8 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 path=(
   "$HOME/bin"
   "$HOME/.local/bin"
-  $path
   "$HOME/.rvm/bin"
+  $path
   "$HOME/.cabal/bin"
   "$GOROOT"/bin
   "$GOBIN"
