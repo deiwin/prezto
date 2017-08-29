@@ -25,8 +25,6 @@ export GOPATH="$HOME/private-workspace/go:$HOME/workspace/go"
 GOBIN="$HOME/private-workspace/go/bin:$HOME/workspace/go/bin"
 export GOROOT=/usr/local/opt/go/libexec
 
-export JAVA_HOME=$(/usr/libexec/java_home)
-
 path=(
   "$HOME/bin"
   "$HOME/.local/bin"
