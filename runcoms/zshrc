@@ -102,3 +102,5 @@ function cabal_sandbox_info() {
 }
 
 RPROMPT="\$(cabal_sandbox_info) $RPROMPT"
+
+export PATH="/usr/local/opt/curl/bin:$PATH"
